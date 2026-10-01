@@ -1,0 +1,119 @@
+/* =========================================================
+   VARIABLES GLOBALES
+   ========================================================= */
+
+:root {
+    --bg: #050505;
+    --bg-soft: #0d0d0f;
+    --red: #ff1f3d;
+    --red-glow: rgba(255, 31, 61, 0.45);
+    --cyan: #00e5ff;
+    --cyan-glow: rgba(0, 229, 255, 0.4);
+    --text: #e8e8ea;
+    --text-dim: #8a8a93;
+
+    --font-mono: "JetBrains Mono", monospace;
+    --font-sans: "Space Grotesk", sans-serif;
+
+    --transition-fast: 180ms ease;
+    --transition-normal: 300ms ease;
+}
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    background: var(--bg);
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+button {
+    border: 0;
+    background: none;
+    color: inherit;
+}
+
+::selection {
+    background: var(--red);
+    color: #fff;
+}
+
+/* =========================================================
+   ACCESIBILIDAD
+   ========================================================= */
+
+:focus-visible {
+    outline: 2px solid var(--cyan);
+    outline-offset: 4px;
+}
+
+/* =========================================================
+   UTILIDADES
+   ========================================================= */
+
+.terminal__sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* =========================================================
+   REDUCCIÓN DE MOVIMIENTO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .terminal__cursor {
+        animation: terminal-cursor-blink 0.9s steps(1) infinite !important;
+    }
+}

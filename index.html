@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrik Lennin Chavez Balvino | Dev Full Stack</title>
+    <meta
+        name="description"
+        content="Desarrollo web full stack con código limpio, eficiente y funcional."
+    >
+    <meta property="og:title" content="Patrik Lennin Chavez Balvino | Dev Full Stack">
+    <meta property="og:description" content="Desarrollo web full stack con código limpio, eficiente y funcional.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/img/og-image.png">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/intro.css">
+</head>
+
+<body class="intro">
+    
+    <canvas class="intro__canvas" id="particles-canvas" aria-hidden="true"></canvas>
+
+    <main class="intro__main">
+        <section class="terminal" id="terminal" aria-label="Introducción del portafolio" tabindex="0">
+            
+            <header class="terminal__header">
+                <div class="terminal__dots" aria-hidden="true">
+                    <span class="terminal__dot terminal__dot--red"></span>
+                    <span class="terminal__dot terminal__dot--amber"></span>
+                    <span class="terminal__dot terminal__dot--cyan"></span>
+                </div>
+                <span class="terminal__title">portfolio.sh</span>
+            </header>
+
+            <div class="terminal__body" id="terminal-output" aria-live="polite"></div>
+
+            <div class="terminal__sr-only" aria-live="polite">
+                <p>&gt; iniciando sistema...</p>
+                <p>&gt; cargando perfil: PATRIK LENNIN CHAVEZ BALVINO</p>
+                <p>&gt; rol: DEV FULL STACK</p>
+                <p>&gt; Construyo ecosistemas digitales completos: código limpio, eficiente y funcional.</p>
+                <p>&gt; estado: disponible</p>
+            </div>
+
+            <div class="terminal__action" id="terminal-action">
+                <a class="intro__button" href="portafolio.html" data-navigation>
+                    <span>Ver portafolio</span>
+                    <span class="intro__button-arrow" aria-hidden="true">→</span>
+                </a>
+                <a class="intro__skip" href="portafolio.html" data-navigation>Saltar intro</a>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="js/intro.js"></script>
+</body>
+</html>
