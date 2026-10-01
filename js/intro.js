@@ -19,11 +19,11 @@ const CONFIG = {
 };
 
 const TERMINAL_LINES = [
-    { type: "normal", text: "iniciando sistema..." },
+    { type: "normal", text: window.t("intro.system") },
     { type: "name", name: "PATRIK LENNIN CHAVEZ BALVINO" },
-    { type: "role", text: "DEV FULL STACK" },
-    { type: "value", text: "Construyo ecosistemas digitales completos: código limpio, eficiente y funcional." },
-    { type: "status", text: "disponible" }
+    { type: "role", text: window.t("intro.role") },
+    { type: "value", text: window.t("intro.tagline") },
+    { type: "status", text: window.t("intro.status") }
 ];
 
 const state = {
@@ -258,7 +258,7 @@ function initTerminal() {
         if (line.type === "name") {
             const prefix = document.createElement("span");
             prefix.className = "terminal__text";
-            prefix.textContent = "cargando perfil: ";
+            prefix.textContent = `${window.t("intro.loadingProfile")} `;
             lineEl.appendChild(prefix);
 
             const name = document.createElement("span");
@@ -271,7 +271,7 @@ function initTerminal() {
         if (line.type === "role") {
             const prefix = document.createElement("span");
             prefix.className = "terminal__text";
-            prefix.textContent = "rol: ";
+            prefix.textContent = `${window.t("intro.roleLabel")} `;
             lineEl.appendChild(prefix);
 
             const role = document.createElement("span");
@@ -284,7 +284,7 @@ function initTerminal() {
         if (line.type === "status") {
             const prefix = document.createElement("span");
             prefix.className = "terminal__text";
-            prefix.textContent = "estado: ";
+            prefix.textContent = `${window.t("intro.statusLabel")} `;
             lineEl.appendChild(prefix);
 
             const status = document.createElement("span");

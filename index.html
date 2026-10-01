@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patrik Lennin Chavez Balvino | Dev Full Stack</title>
+    <title data-i18n="meta.introTitle">Patrik Lennin Chavez Balvino | Dev Full Stack</title>
     <meta
         name="description"
         content="Desarrollo web full stack con código limpio, eficiente y funcional."
+        data-i18n="meta.introDescription"
+        data-i18n-attr="content"
     >
     <meta property="og:title" content="Patrik Lennin Chavez Balvino | Dev Full Stack">
     <meta property="og:description" content="Desarrollo web full stack con código limpio, eficiente y funcional.">
@@ -27,7 +29,7 @@
     <canvas class="intro__canvas" id="particles-canvas" aria-hidden="true"></canvas>
 
     <main class="intro__main">
-        <section class="terminal" id="terminal" aria-label="Introducción del portafolio" tabindex="0">
+        <section class="terminal" id="terminal" aria-label="Introducción del portafolio" data-i18n="intro.aria" data-i18n-attr="aria-label" tabindex="0">
             
             <header class="terminal__header">
                 <div class="terminal__dots" aria-hidden="true">
@@ -41,24 +43,26 @@
             <div class="terminal__body" id="terminal-output" aria-live="polite"></div>
 
             <div class="terminal__sr-only" aria-live="polite">
-                <p>&gt; iniciando sistema...</p>
-                <p>&gt; cargando perfil: PATRIK LENNIN CHAVEZ BALVINO</p>
-                <p>&gt; rol: DEV FULL STACK</p>
-                <p>&gt; Construyo ecosistemas digitales completos: código limpio, eficiente y funcional.</p>
-                <p>&gt; estado: disponible</p>
+                <p>&gt; <span data-i18n="intro.system">iniciando sistema...</span></p>
+                <p>&gt; <span data-i18n="intro.loadingProfile">cargando perfil:</span> PATRIK LENNIN CHAVEZ BALVINO</p>
+                <p>&gt; <span data-i18n="intro.roleLabel">rol:</span> <span data-i18n="intro.role">DEV FULL STACK</span></p>
+                <p>&gt; <span data-i18n="intro.tagline">Construyo ecosistemas digitales completos: código limpio, eficiente y funcional.</span></p>
+                <p>&gt; <span data-i18n="intro.statusLabel">estado:</span> <span data-i18n="intro.status">disponible</span></p>
             </div>
 
             <div class="terminal__action" id="terminal-action">
                 <a class="intro__button" href="portafolio.html" data-navigation>
-                    <span>Ver portafolio</span>
+                    <span data-i18n="intro.viewPortfolio">Ver portafolio</span>
                     <span class="intro__button-arrow" aria-hidden="true">→</span>
                 </a>
-                <a class="intro__skip" href="portafolio.html" data-navigation>Saltar intro</a>
+                <a class="intro__skip" href="portafolio.html" data-navigation data-i18n="intro.skip">Saltar intro</a>
             </div>
 
         </section>
     </main>
 
+    <script src="content/translations.js"></script>
+    <script src="js/i18n.js"></script>
     <script src="js/intro.js"></script>
 </body>
 </html>

@@ -2,6 +2,50 @@
    COMPONENTES REUTILIZABLES
    ========================================================= */
 
+.language-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem;
+    border: 1px solid rgba(0, 229, 255, 0.3);
+    border-radius: 5px;
+    background: transparent;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    line-height: 1;
+}
+
+.site-header__brand-controls {
+    display: contents;
+}
+
+@media (min-width: 768px) {
+    .site-header__brand-controls {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+.language-switch button {
+    min-width: 1.7rem;
+    min-height: 1.6rem;
+    padding: 0.25rem;
+    color: var(--text-dim);
+    cursor: pointer;
+    transition: color var(--transition-fast), text-shadow var(--transition-fast);
+}
+
+.language-switch button.is-active {
+    color: var(--cyan);
+    text-shadow: 0 0 10px var(--cyan-glow);
+}
+
+.language-switch button:focus-visible {
+    outline: 1px solid var(--cyan);
+    outline-offset: 2px;
+}
+
 /* =========================================================
    PANEL VIDRIO
    ========================================================= */

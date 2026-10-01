@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Patrik Lennin Chavez Balvino | Dev Full Stack — Proyectos</title>
+    <title data-i18n="meta.portfolioTitle">Patrik Lennin Chavez Balvino | Dev Full Stack — Proyectos</title>
     <meta
         name="description"
         content="Portafolio de Patrik Lennin Chavez Balvino, Dev Full Stack. Proyectos, tecnologías y contacto."
+        data-i18n="meta.portfolioDescription"
+        data-i18n-attr="content"
     >
 
     <meta property="og:title" content="Patrik Lennin Chavez Balvino | Dev Full Stack — Proyectos">
     <meta
         property="og:description"
         content="Portafolio de Patrik Lennin Chavez Balvino, Dev Full Stack."
+        data-i18n="meta.portfolioOgDescription"
+        data-i18n-attr="content"
     >
     <meta property="og:type" content="website">
     <meta property="og:image" content="assets/img/og-image.png">
@@ -49,29 +53,41 @@
     <header class="site-header" id="site-header">
         <div class="site-header__inner">
 
-            <a
-                class="site-header__logo"
-                href="#home"
-                aria-label="Volver al inicio"
-                data-scroll-to="home"
-            >
-                PC
-            </a>
+            <div class="site-header__brand-controls">
+                <a
+                    class="site-header__logo"
+                    href="#home"
+                    aria-label="Volver al inicio"
+                    data-scroll-to="home"
+                    data-i18n="header.homeAria"
+                    data-i18n-attr="aria-label"
+                >
+                    PC
+                </a>
+
+                <div class="language-switch" role="group" aria-label="Cambiar idioma / Change language" data-i18n="header.languageAria" data-i18n-attr="aria-label">
+                    <button type="button" data-language="es" aria-pressed="true">ES</button>
+                    <button type="button" data-language="en" aria-pressed="false">EN</button>
+                </div>
+            </div>
 
             <nav
                 class="site-header__nav"
                 id="desktop-navigation"
                 aria-label="Navegación principal"
+                data-i18n="header.navigationAria"
+                data-i18n-attr="aria-label"
             >
-                <a href="#home" data-scroll-to="home">HOME</a>
-                <a href="#about" data-scroll-to="about">ABOUT</a>
-                <a href="#projects" data-scroll-to="projects">PROJECTS</a>
+                <a href="#home" data-scroll-to="home" data-i18n="nav.home">HOME</a>
+                <a href="#about" data-scroll-to="about" data-i18n="nav.about">ABOUT</a>
+                <a href="#projects" data-scroll-to="projects" data-i18n="nav.projects">PROJECTS</a>
             </nav>
 
             <a
                 class="site-header__cta"
                 href="#contact"
                 data-scroll-to="contact"
+                data-i18n="nav.contact"
             >
                 CONTACT
             </a>
@@ -81,6 +97,8 @@
                 id="menu-toggle"
                 type="button"
                 aria-label="Abrir menú"
+                data-i18n="header.menuOpen"
+                data-i18n-attr="aria-label"
                 aria-controls="mobile-navigation"
                 aria-expanded="false"
             >
@@ -94,11 +112,11 @@
              MENÚ MÓVIL
              ================================================= -->
         <div class="mobile-navigation" id="mobile-navigation">
-            <nav aria-label="Navegación móvil">
-                <a href="#home" data-scroll-to="home">01 / HOME</a>
-                <a href="#about" data-scroll-to="about">02 / ABOUT</a>
-                <a href="#projects" data-scroll-to="projects">03 / PROJECTS</a>
-                <a href="#contact" data-scroll-to="contact">04 / CONTACT</a>
+            <nav aria-label="Navegación móvil" data-i18n="header.mobileNavigationAria" data-i18n-attr="aria-label">
+                <a href="#home" data-scroll-to="home" data-i18n="nav.mobileHome">01 / HOME</a>
+                <a href="#about" data-scroll-to="about" data-i18n="nav.mobileAbout">02 / ABOUT</a>
+                <a href="#projects" data-scroll-to="projects" data-i18n="nav.mobileProjects">03 / PROJECTS</a>
+                <a href="#contact" data-scroll-to="contact" data-i18n="nav.mobileContact">04 / CONTACT</a>
             </nav>
         </div>
     </header>
@@ -112,7 +130,7 @@
             <div class="hero__content">
 
                 <p class="section-kicker hero__kicker">
-                    &gt; SYSTEM / PORTFOLIO
+                    <span data-i18n="hero.kicker">&gt; SYSTEM / PORTFOLIO</span>
                 </p>
 
                 <h1 class="hero__title" id="hero-title">
@@ -120,10 +138,10 @@
                     <span>CHAVEZ BALVINO</span>
                 </h1>
 
-                <p class="hero__role">DEV FULL STACK</p>
+                <p class="hero__role" data-i18n="hero.role">DEV FULL STACK</p>
 
                 <p class="hero__value">
-                    Creo soluciones digitales completas, limpias y funcionales.
+                    <span data-i18n="hero.tagline">Creo soluciones digitales completas, limpias y funcionales.</span>
                 </p>
 
                 <div class="hero__actions">
@@ -132,7 +150,7 @@
                         href="#projects"
                         data-scroll-to="projects"
                     >
-                        VER PROYECTOS
+                        <span data-i18n="hero.viewProjects">VER PROYECTOS</span>
                         <span aria-hidden="true">→</span>
                     </a>
 
@@ -149,7 +167,7 @@
             </div>
 
             <div class="hero__scroll" aria-hidden="true">
-                <span>SCROLL</span>
+                <span data-i18n="hero.scroll">SCROLL</span>
                 <span class="hero__scroll-line"></span>
             </div>
         </section>
@@ -160,8 +178,8 @@
         <section class="section section--about" id="about" aria-labelledby="about-title">
 
             <div class="section-heading">
-                <p class="section-kicker">&gt; ABOUT</p>
-                <h2 id="about-title">SOBRE MÍ</h2>
+                <p class="section-kicker" data-i18n="about.kicker">&gt; ABOUT</p>
+                <h2 id="about-title" data-i18n="about.title">SOBRE MÍ</h2>
             </div>
 
             <div class="about__layout">
@@ -171,6 +189,8 @@
                         <img
                             src="assets/img/perfil.png"
                             alt="Fotografía de perfil de Patrik Lennin Chavez Balvino"
+                            data-i18n="about.profileAlt"
+                            data-i18n-attr="alt"
                         >
                         <span class="profile-frame__corner profile-frame__corner--tl"></span>
                         <span class="profile-frame__corner profile-frame__corner--tr"></span>
@@ -180,22 +200,22 @@
 
                     <p class="about__profile-status">
                         <span class="status-dot"></span>
-                        AVAILABLE FOR PROJECTS
+                        <span data-i18n="about.availability">AVAILABLE FOR PROJECTS</span>
                     </p>
                 </div>
 
                 <div class="about__content">
 
                     <div class="about__text glass-panel">
-                        <p class="about__label">/ SOBRE MÍ</p>
+                        <p class="about__label" data-i18n="about.label">/ SOBRE MÍ</p>
 
-                        <p>Soy desarrollador de software con más de 3 años de experiencia, egresado de Ingeniería de Sistemas Computacionales. Desarrollo aplicaciones multiplataforma con Flutter, aplicaciones nativas con Kotlin y Java, y soluciones web.</p>
-                        <p>Trabajo en una empresa ISP como NOC y SOC, donde además de desarrollar automatizo procesos con N8N y APIs REST. De forma paralela, tomo proyectos freelance de principio a fin con Flutter y Firebase.</p>
+                        <p data-i18n="about.paragraph1">Soy desarrollador de software con más de 3 años de experiencia, egresado de Ingeniería de Sistemas Computacionales. Desarrollo aplicaciones multiplataforma con Flutter, aplicaciones nativas con Kotlin y Java, y soluciones web.</p>
+                        <p data-i18n="about.paragraph2">Trabajo en una empresa ISP como NOC y SOC, donde además de desarrollar automatizo procesos con N8N y APIs REST. De forma paralela, tomo proyectos freelance de principio a fin con Flutter y Firebase.</p>
 
-                        <p class="about__label">/ QUÉ BUSCO</p>
+                        <p class="about__label" data-i18n="about.goalsLabel">/ QUÉ BUSCO</p>
 
                         <p>
-                            Busco un rol de desarrollador de software, ya sea móvil, multiplataforma o full stack, en un equipo donde pueda aportar desde el primer día y seguir creciendo. Me interesa construir productos reales, trabajar con buenas prácticas y metodologías ágiles, y aprender de desarrolladores con más trayectoria.
+                            <span data-i18n="about.goals">Busco un rol de desarrollador de software, ya sea móvil, multiplataforma o full stack, en un equipo donde pueda aportar desde el primer día y seguir creciendo. Me interesa construir productos reales, trabajar con buenas prácticas y metodologías ágiles, y aprender de desarrolladores con más trayectoria.</span>
                         </p>
                     </div>
 
@@ -205,7 +225,7 @@
                                 APLICACIONES
                              ================================ -->
                         <article class="tech-group">
-                            <h3>APLICACIONES</h3>
+                            <h3 data-i18n="about.applications">APLICACIONES</h3>
 
                             <div class="tech-grid">
                                 <div class="tech-item">
@@ -235,7 +255,7 @@
                              DESARROLLO WEB
                              ================================ -->
                         <article class="tech-group">
-                            <h3>DESARROLLO WEB</h3>
+                            <h3 data-i18n="about.web">DESARROLLO WEB</h3>
 
                             <div class="tech-grid">
                                 <div class="tech-item">
@@ -265,7 +285,7 @@
                              BASES DE DATOS Y BACKEND
                              ================================ -->
                         <article class="tech-group">
-                            <h3>BASES DE DATOS Y BACKEND</h3>
+                            <h3 data-i18n="about.backend">BASES DE DATOS Y BACKEND</h3>
 
                             <div class="tech-grid">
                                 <div class="tech-item">
@@ -304,7 +324,7 @@
                              HERRAMIENTAS
                              ================================ -->
                         <article class="tech-group">
-                            <h3>HERRAMIENTAS</h3>
+                            <h3 data-i18n="about.tools">HERRAMIENTAS</h3>
 
                             <div class="tech-grid">
                                 <div class="tech-item">
@@ -343,7 +363,7 @@
                              AUTOMATIZACIÓN E INTEGRACIONES
                              ================================ -->
                         <article class="tech-group">
-                            <h3>AUTOMATIZACIÓN E INTEGRACIONES</h3>
+                            <h3 data-i18n="about.automation">AUTOMATIZACIÓN E INTEGRACIONES</h3>
 
                             <div class="tech-grid">
                                 <div class="tech-item">
@@ -373,7 +393,7 @@
                              CONOCIMIENTOS ACADÉMICOS
                              ================================ -->
                         <article class="tech-group">
-                            <h3>CONOCIMIENTOS ACADÉMICOS</h3>
+                            <h3 data-i18n="about.academic">CONOCIMIENTOS ACADÉMICOS</h3>
 
                             <div class="tech-grid">
                                 <div class="tech-item">
@@ -415,8 +435,8 @@
         <section class="section section--projects" id="projects" aria-labelledby="projects-title">
 
             <div class="section-heading section-heading--terminal">
-                <p class="section-kicker">&gt; PROJECTS</p>
-                <h2 id="projects-title">PROYECTOS DESTACADOS<span class="terminal-cursor-small">_</span></h2>
+                <p class="section-kicker" data-i18n="projects.kicker">&gt; PROJECTS</p>
+                <h2 id="projects-title"><span data-i18n="projects.title">PROYECTOS DESTACADOS</span><span class="terminal-cursor-small">_</span></h2>
             </div>
 
             <div class="projects-grid">
@@ -429,18 +449,20 @@
                 <article class="project-card">
                     <div class="project-card__media">
                         <img
-                            src="assets/img/projects/proyecto1/sport_medical.png"
+                            src="assets/img/projects/proyecto1/sport_medical.webp"
                             alt="Vista previa del proyecto [Sport medical]"
+                            data-i18n="projects.alt01"
+                            data-i18n-attr="alt"
                         >
                         <span class="project-card__number">01</span>
                     </div>
 
                     <div class="project-card__content">
-                        <p class="project-card__type">PROJECT / 01</p>
+                        <p class="project-card__type" data-i18n="projects.type01">PROJECT / 01</p>
 
-                        <h3>SPORT MEDICAL</h3>
+                        <h3 data-i18n="projects.title01">SPORT MEDICAL</h3>
 
-                        <p class="project-card__description">
+                        <p class="project-card__description" data-i18n="projects.description01">
                             Aplicación multiplatadormas para gestión de asistencias y tratamiendos terapeuticos. Ademas de sesiones de pacientes.
                         </p>
 
@@ -455,9 +477,11 @@
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Código de [Sport medical] en GitHub"
+                                data-i18n="projects.github01"
+                                data-i18n-attr="aria-label"
                             >
                                 <span aria-hidden="true">⌘</span>
-                                GITHUB / Private
+                                <span data-i18n="projects.githubPrivate">GITHUB / Private</span>
                             </a>
 
                             <a
@@ -465,9 +489,11 @@
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Sport Medical en vivo"
+                                data-i18n="projects.live01"
+                                data-i18n-attr="aria-label"
                             >
                                 <span aria-hidden="true">↗</span>
-                                LIVE
+                                <span data-i18n="projects.live">LIVE</span>
                             </a>
                         </div>
                     </div>
@@ -477,17 +503,19 @@
                 <article class="project-card">
                     <div class="project-card__media">
                         <img
-                            src="assets/img/projects/proyecto2/wilux_tv.png"
+                            src="assets/img/projects/proyecto2/wilux_tv.webp"
                             alt="Vista previa del proyecto Wilux IPTV"
+                            data-i18n="projects.alt02"
+                            data-i18n-attr="alt"
                         >
                         <span class="project-card__number">02</span>
                     </div>
 
                     <div class="project-card__content">
-                        <p class="project-card__type">PROJECT / 02</p>
-                        <h3>Wilux TV</h3>
+                        <p class="project-card__type" data-i18n="projects.type02">PROJECT / 02</p>
+                        <h3 data-i18n="projects.title02">Wilux TV</h3>
 
-                        <p class="project-card__description">
+                        <p class="project-card__description" data-i18n="projects.description02">
                             Aplicacion multiplataforma para gestión de contenido IPTV, con panel de administración y control de usuarios.
                         </p>
 
@@ -504,9 +532,11 @@
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Código de [NOMBRE PROYECTO 02] en GitHub"
+                                data-i18n="projects.github02"
+                                data-i18n-attr="aria-label"
                             >
                                 <span aria-hidden="true">⌘</span>
-                                GITHUB / Private
+                                <span data-i18n="projects.githubPrivate">GITHUB / Private</span>
                             </a>
 
                             <a
@@ -514,9 +544,11 @@
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Demo de [NOMBRE PROYECTO 02]"
+                                data-i18n="projects.demo02"
+                                data-i18n-attr="aria-label"
                             >
                                 <span aria-hidden="true">↗</span>
-                                LIVE
+                                <span data-i18n="projects.live">LIVE</span>
                             </a>
                         </div>
                     </div>
@@ -526,17 +558,19 @@
                 <article class="project-card">
                     <div class="project-card__media">
                         <img
-                            src="assets/img/projects/proyecto3/tupsico.png"
+                            src="assets/img/projects/proyecto3/tupsico.webp"
                             alt="Vista previa del proyecto [NOMBRE PROYECTO 03]"
+                            data-i18n="projects.alt03"
+                            data-i18n-attr="alt"
                         >
                         <span class="project-card__number">03</span>
                     </div>
 
                     <div class="project-card__content">
-                        <p class="project-card__type">PROJECT / 03</p>
-                        <h3>TuPsico</h3>
+                        <p class="project-card__type" data-i18n="projects.type03">PROJECT / 03</p>
+                        <h3 data-i18n="projects.title03">TuPsico</h3>
 
-                        <p class="project-card__description">
+                        <p class="project-card__description" data-i18n="projects.description03">
                             Aplicación multiplataforma para gestión de consultas psicológicas, con panel de administración y control de usuarios.
                         </p>
 
@@ -551,9 +585,11 @@
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Código de [TuPsico] en GitHub"
+                                data-i18n="projects.github03"
+                                data-i18n-attr="aria-label"
                             >
                                 <span aria-hidden="true">⌘</span>
-                                GITHUB / Private
+                                <span data-i18n="projects.githubPrivate">GITHUB / Private</span>
                             </a>
 
                             <a
@@ -561,9 +597,11 @@
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Demo de [TuPsico]"
+                                data-i18n="projects.demo03"
+                                data-i18n-attr="aria-label"
                             >
                                 <span aria-hidden="true">↗</span>
-                                LIVE
+                                <span data-i18n="projects.live">LIVE</span>
                             </a>
                         </div>
                     </div>
@@ -573,17 +611,19 @@
                 <article class="project-card">
                     <div class="project-card__media">
                         <img
-                            src="assets/img/projects/proyecto4/wilux.png"
+                            src="assets/img/projects/proyecto4/wilux.webp"
                             alt="Vista previa del proyecto [wilux]"
+                            data-i18n="projects.alt04"
+                            data-i18n-attr="alt"
                         >
                         <span class="project-card__number">04</span>
                     </div>
 
                     <div class="project-card__content">
-                        <p class="project-card__type">PROJECT / 04</p>
-                        <h3>Wilux</h3>
+                        <p class="project-card__type" data-i18n="projects.type04">PROJECT / 04</p>
+                        <h3 data-i18n="projects.title04">Wilux</h3>
 
-                        <p class="project-card__description">
+                        <p class="project-card__description" data-i18n="projects.description04">
                             Aplicacion multiplataformas para gestion administrativa y control de trabajadores y clientes de la empresa ISP.
                         </p>
 
@@ -599,9 +639,11 @@
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Código de [Wilux] en GitHub"
+                                data-i18n="projects.github04"
+                                data-i18n-attr="aria-label"
                             >
                                 <span aria-hidden="true">⌘</span>
-                                GITHUB / Private
+                                <span data-i18n="projects.githubPrivate">GITHUB / Private</span>
                             </a>
 
                             <a
@@ -609,9 +651,11 @@
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Demo de [Wilux]"
+                                data-i18n="projects.demo04"
+                                data-i18n-attr="aria-label"
                             >
                                 <span aria-hidden="true">↗</span>
-                                PRIVATE
+                                <span data-i18n="projects.private">PRIVATE</span>
                             </a>
                         </div>
                     </div>
@@ -621,17 +665,19 @@
                 <article class="project-card">
                     <div class="project-card__media">
                         <img
-                            src="assets/img/projects/proyecto5/fisio_libre.png"
+                            src="assets/img/projects/proyecto5/fisio_libre.webp"
                             alt="Vista previa del proyecto [Fisio Libre]"
+                            data-i18n="projects.alt05"
+                            data-i18n-attr="alt"
                         >
                         <span class="project-card__number">05</span>
                     </div>
 
                     <div class="project-card__content">
-                        <p class="project-card__type">PROJECT / 05</p>
-                        <h3>Fisio Libre</h3>
+                        <p class="project-card__type" data-i18n="projects.type05">PROJECT / 05</p>
+                        <h3 data-i18n="projects.title05">Fisio Libre</h3>
 
-                        <p class="project-card__description">
+                        <p class="project-card__description" data-i18n="projects.description05">
                             Sitio Web orientado en informacion de Libros y articulos de fisioterapia, con contenido PDF y descargable.
                         </p>
 
@@ -647,9 +693,11 @@
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Código de [Fisio Libre] en GitHub"
+                                data-i18n="projects.github05"
+                                data-i18n-attr="aria-label"
                             >
                                 <span aria-hidden="true">⌘</span>
-                                GITHUB
+                                <span data-i18n="projects.github">GITHUB</span>
                             </a>
 
                             <a
@@ -657,9 +705,11 @@
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Demo de [Fisio Libre]"
+                                data-i18n="projects.demo05"
+                                data-i18n-attr="aria-label"
                             >
                                 <span aria-hidden="true">↗</span>
-                                Live
+                                <span data-i18n="projects.liveTitleCase">Live</span>
                             </a>
                         </div>
                     </div>
@@ -688,13 +738,12 @@
                 <div class="contact-terminal__body">
 
                     <div class="contact-terminal__intro">
-                        <p class="section-kicker">&gt; CONTACT</p>
+                        <p class="section-kicker" data-i18n="contact.kicker">&gt; CONTACT</p>
                         <h2 id="contact-title">
-                            &gt; ¿tienes una idea? hablemos<span class="terminal-cursor-small">_</span>
+                            <span data-i18n="contact.title">&gt; ¿tienes una idea? hablemos</span><span class="terminal-cursor-small">_</span>
                         </h2>
                         <p>
-                            Estoy disponible para conversar sobre nuevos proyectos,
-                            colaboraciones y oportunidades.
+                            <span data-i18n="contact.description">Estoy disponible para conversar sobre nuevos proyectos, colaboraciones y oportunidades.</span>
                         </p>
                     </div>
 
@@ -761,22 +810,26 @@
                         <div class="contact-form__row">
 
                             <label>
-                                <span>NOMBRE</span>
+                                <span data-i18n="contact.nameLabel">NOMBRE</span>
                                 <input
                                     type="text"
                                     name="name"
                                     placeholder="Tu nombre"
+                                    data-i18n="contact.namePlaceholder"
+                                    data-i18n-attr="placeholder"
                                     autocomplete="name"
                                     required
                                 >
                             </label>
 
                             <label>
-                                <span>EMAIL</span>
+                                <span data-i18n="contact.emailLabel">EMAIL</span>
                                 <input
                                     type="email"
                                     name="email"
                                     placeholder="tu@email.com"
+                                    data-i18n="contact.emailPlaceholder"
+                                    data-i18n-attr="placeholder"
                                     autocomplete="email"
                                     required
                                 >
@@ -785,17 +838,19 @@
                         </div>
 
                         <label>
-                            <span>MENSAJE</span>
+                            <span data-i18n="contact.messageLabel">MENSAJE</span>
                             <textarea
                                 name="message"
                                 rows="5"
                                 placeholder="Cuéntame sobre tu proyecto..."
+                                data-i18n="contact.messagePlaceholder"
+                                data-i18n-attr="placeholder"
                                 required
                             ></textarea>
                         </label>
 
                         <button class="button button--primary" type="submit">
-                            ENVIAR MENSAJE
+                            <span data-i18n="contact.submit">ENVIAR MENSAJE</span>
                             <span aria-hidden="true">→</span>
                         </button>
                     </form>
@@ -820,6 +875,8 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="GitHub"
+                    data-i18n="social.github"
+                    data-i18n-attr="aria-label"
                 >
                     GH
                 </a>
@@ -829,6 +886,8 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="LinkedIn"
+                    data-i18n="social.linkedin"
+                    data-i18n-attr="aria-label"
                 >
                     IN
                 </a>
@@ -838,6 +897,8 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="WhatsApp"
+                    data-i18n="social.whatsapp"
+                    data-i18n-attr="aria-label"
                 >
                     WA
                 </a>
@@ -854,6 +915,8 @@
     <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.14/dist/lenis.min.js"></script>
 
     <!-- JS propio -->
+    <script src="content/translations.js"></script>
+    <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
     <script src="js/animations.js"></script>
 

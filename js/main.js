@@ -20,6 +20,7 @@ const PORTFOLIO_CONFIG = {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+    initI18n();
     initLenis();
     initHeader();
     initMobileMenu();
@@ -107,7 +108,7 @@ function initMobileMenu() {
         toggle.setAttribute("aria-expanded", String(isOpen));
         toggle.setAttribute(
             "aria-label",
-            isOpen ? "Cerrar menú" : "Abrir menú"
+            isOpen ? window.t("header.menuClose") : window.t("header.menuOpen")
         );
 
         document.body.classList.toggle("menu-open", isOpen);
@@ -122,6 +123,14 @@ function initMobileMenu() {
         link.addEventListener("click", () => {
             setMenuState(false);
         });
+    });
+
+    window.addEventListener("languagechange", () => {
+        const isOpen = menu.classList.contains("is-open");
+        toggle.setAttribute(
+            "aria-label",
+            isOpen ? window.t("header.menuClose") : window.t("header.menuOpen")
+        );
     });
 
     document.addEventListener("keydown", (event) => {
@@ -457,262 +466,284 @@ function initProjectModal() {
 
     const projects = [
         {
-            title: "SPORT MEDICAL",
+            title: { es: "SPORT MEDICAL", en: "SPORT MEDICAL" },
             file: "proyecto-01.sh",
-            description:
-                "*Sport Medical* es un ecosistema digital desarrollado en *Flutter* diseñado para modernizar y optimizar la gestión operativa y clínica de centros de terapia física. El sistema reemplaza el registro manual en fichas de papel por una solución segura, escalable y accesible en la nube a través de **Firebase Hosting**, garantizando un control riguroso de tratamientos, firmas digitales de conformidad y un canal transparente de consulta para el paciente.",
-            badges: ["Flutter", "Firebase"],
+            description: {
+                es: "*Sport Medical* es un ecosistema digital desarrollado en *Flutter* diseñado para modernizar y optimizar la gestión operativa y clínica de centros de terapia física. El sistema reemplaza el registro manual en fichas de papel por una solución segura, escalable y accesible en la nube a través de **Firebase Hosting**, garantizando un control riguroso de tratamientos, firmas digitales de conformidad y un canal transparente de consulta para el paciente.",
+                en: "*Sport Medical* is a digital ecosystem built with *Flutter* to modernize and optimize the operational and clinical management of physical therapy centers. It replaces paper-based records with a secure, scalable cloud solution using **Firebase Hosting**, ensuring careful treatment tracking, digital consent signatures, and a transparent information channel for patients."
+            },
+            badges: { es: ["Flutter", "Firebase"], en: ["Flutter", "Firebase"] },
 
             website: {
-                text: "  ✔ VIDEO EXPLICATIVO​",
+                text: {
+                    es: "  ✔ VIDEO EXPLICATIVO​",
+                    en: "  ✔ EXPLANATORY VIDEO"
+                },
                 url: "https://youtube.com/shorts/owXXgbDPa1U?si=gVqCwG6eUV0CNFbd"
             },
 
             gallery: [
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto1/1.png",
+                    src: "assets/img/projects/proyecto1/1.webp",
                     alt: "splash screen"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto1/2.png",
+                    src: "assets/img/projects/proyecto1/2.webp",
                     alt: "login screen"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto1/3.png",
+                    src: "assets/img/projects/proyecto1/3.webp",
                     alt: "login_personal screen"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto1/4.png",
+                    src: "assets/img/projects/proyecto1/4.webp",
                     alt: "login_personal screen"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto1/5.png",
+                    src: "assets/img/projects/proyecto1/5.webp",
                     alt: "login_personal screen"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto1/6.png",
+                    src: "assets/img/projects/proyecto1/6.webp",
                     alt: "login_personal screen"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto1/7.png",
+                    src: "assets/img/projects/proyecto1/7.webp",
                     alt: "login_personal screen"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto1/8.png",
+                    src: "assets/img/projects/proyecto1/8.webp",
                     alt: "login_personal screen"
                 }
             ]
         },
         {
-            title: "WILUX TV",
+            title: { es: "WILUX TV", en: "WILUX TV" },
             file: "proyecto-02.sh",
-            description:
-                "*Wilux TV* es una aplicación multiplataforma desarrollada en *Flutter* que permite a los usuarios acceder a contenido de televisión en vivo y bajo demanda, con funciones de búsqueda, filtrado y control parental. La aplicación se integra con servicios API de proveedor con licencias legitimas brindada al ISP wilux y utiliza *Firebase* para la gestión de usuarios y almacenamiento de datos.",
-            badges: ["Flutter", "API", "Firebase", "Kotlin"],
+            description: {
+                es: "*Wilux TV* es una aplicación multiplataforma desarrollada en *Flutter* que permite a los usuarios acceder a contenido de televisión en vivo y bajo demanda, con funciones de búsqueda, filtrado y control parental. La aplicación se integra con servicios API de proveedor con licencias legitimas brindada al ISP wilux y utiliza *Firebase* para la gestión de usuarios y almacenamiento de datos.",
+                en: "*Wilux TV* is a cross-platform application built with *Flutter* that gives users access to live and on-demand TV, with search, filtering, and parental controls. It connects to licensed provider APIs for Wilux ISP and uses *Firebase* for user management and data storage."
+            },
+            badges: {
+                es: ["Flutter", "API", "Firebase", "Kotlin"],
+                en: ["Flutter", "API", "Firebase", "Kotlin"]
+            },
             gallery: [
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto2/1.png",
+                    src: "assets/img/projects/proyecto2/1.webp",
                     alt: "splash screen"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto2/2.png",
+                    src: "assets/img/projects/proyecto2/2.webp",
                     alt: "login screen"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto2/3.png",
+                    src: "assets/img/projects/proyecto2/3.webp",
                     alt: "canales screen"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto2/4.png",
+                    src: "assets/img/projects/proyecto2/4.webp",
                     alt: "reproduccion screen"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto2/5.png",
+                    src: "assets/img/projects/proyecto2/5.webp",
                     alt: "buscador"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto2/6.png",
+                    src: "assets/img/projects/proyecto2/6.webp",
                     alt: "filtro"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto2/7.png",
+                    src: "assets/img/projects/proyecto2/7.webp",
                     alt: "control parental"
                 }
             ]
         },
         {
-            title: "TUPSICO",
+            title: { es: "TUPSICO", en: "TUPSICO" },
             file: "proyecto-03.sh",
-            description:
-                "*Tupsico* es una aplicación multiplataforma desarrollada en *Flutter* que permite a los psicólogos gestionar pacientes, evaluaciones y resultados de manera eficiente. La aplicación se integra con *Firebase* para la autenticación de usuarios, almacenamiento de datos y notificaciones push, brindando una experiencia segura y confiable para profesionales de la salud mental.",
-            badges: ["Flutter", "Firebase"],
+            description: {
+                es: "*Tupsico* es una aplicación multiplataforma desarrollada en *Flutter* que permite a los psicólogos gestionar pacientes, evaluaciones y resultados de manera eficiente. La aplicación se integra con *Firebase* para la autenticación de usuarios, almacenamiento de datos y notificaciones push, brindando una experiencia segura y confiable para profesionales de la salud mental.",
+                en: "*Tupsico* is a cross-platform application built with *Flutter* that helps psychologists efficiently manage patients, assessments, and results. It integrates with *Firebase* for authentication, data storage, and push notifications, providing a secure and reliable experience for mental health professionals."
+            },
+            badges: { es: ["Flutter", "Firebase"], en: ["Flutter", "Firebase"] },
             gallery: [
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto3/1.png",
+                    src: "assets/img/projects/proyecto3/1.webp",
                     alt: "splash screen"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto3/2.png",
+                    src: "assets/img/projects/proyecto3/2.webp",
                     alt: "login_psicologo screen"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto3/3.png",
+                    src: "assets/img/projects/proyecto3/3.webp",
                     alt: "administracion screen"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto3/4.png",
+                    src: "assets/img/projects/proyecto3/4.webp",
                     alt: "gestionar pacientes screen"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto3/5.png",
+                    src: "assets/img/projects/proyecto3/5.webp",
                     alt: "gestionar pacientes screen"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto3/6.png",
+                    src: "assets/img/projects/proyecto3/6.webp",
                     alt: "gestionar pacientes screen"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto3/7.png",
+                    src: "assets/img/projects/proyecto3/7.webp",
                     alt: "panel de evaluaciones screen"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto3/8.png",
+                    src: "assets/img/projects/proyecto3/8.webp",
                     alt: "login_paciente screen"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto3/9.png",
+                    src: "assets/img/projects/proyecto3/9.webp",
                     alt: "panel de evaluaciones screen"
                 }
             ]
         },
         {
-            title: "WILUX",
+            title: { es: "WILUX", en: "WILUX" },
             file: "proyecto-04.sh",
-            description:
-                "*Wilux* es una aplicación multiplataforma desarrollada en *Flutter* que permite a los técnicos de campo gestionar órdenes de trabajo ademas de poder ubicarse con mapa interactivo y ubicar cajas NAP para instalaciones. Ademas permite realizar encuestas de manera eficiente para los volanteros y vendedores de campo. La aplicación se integra con *Firebase* para la autenticación de usuarios, almacenamiento de datos y notificaciones push, brindando una experiencia segura y confiable para los profesionales de servicios técnicos, area de ventas y trabajadores de campo.",
-            badges: ["Flutter", "REST API", "Firebase"],
+            description: {
+                es: "*Wilux* es una aplicación multiplataforma desarrollada en *Flutter* que permite a los técnicos de campo gestionar órdenes de trabajo ademas de poder ubicarse con mapa interactivo y ubicar cajas NAP para instalaciones. Ademas permite realizar encuestas de manera eficiente para los volanteros y vendedores de campo. La aplicación se integra con *Firebase* para la autenticación de usuarios, almacenamiento de datos y notificaciones push, brindando una experiencia segura y confiable para los profesionales de servicios técnicos, area de ventas y trabajadores de campo.",
+                en: "*Wilux* is a cross-platform application built with *Flutter* that helps field technicians manage work orders, navigate an interactive map, and locate NAP boxes for installations. It also supports efficient surveys for field promoters and sales teams. The application integrates with *Firebase* for authentication, data storage, and push notifications, serving technical support, sales, and field teams."
+            },
+            badges: {
+                es: ["Flutter", "REST API", "Firebase"],
+                en: ["Flutter", "REST API", "Firebase"]
+            },
             gallery: [
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto4/1.png",
+                    src: "assets/img/projects/proyecto4/1.webp",
                     alt: "splash screen"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto4/1_1.png",
+                    src: "assets/img/projects/proyecto4/1_1.webp",
                     alt: "login screen"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto4/2.png",
+                    src: "assets/img/projects/proyecto4/2.webp",
                     alt: "ordenes screen"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto4/3.png",
+                    src: "assets/img/projects/proyecto4/3.webp",
                     alt: "clientes screen"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto4/4.png",
+                    src: "assets/img/projects/proyecto4/4.webp",
                     alt: "naps screen"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto4/5.png",
+                    src: "assets/img/projects/proyecto4/5.webp",
                     alt: "naps screen"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto4/6.png",
+                    src: "assets/img/projects/proyecto4/6.webp",
                     alt: "naps screen"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto4/7.png",
+                    src: "assets/img/projects/proyecto4/7.webp",
                     alt: "encuestas screen"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto4/8.png",
+                    src: "assets/img/projects/proyecto4/8.webp",
                     alt: "dashboard screen"
                 }
             ]
         },
         {
-            title: "FISIO LIBRE",
+            title: { es: "FISIO LIBRE", en: "FISIO LIBRE" },
             file: "proyecto-05.sh",
-            description:
-                "*Fisio Libre* es un sitio web desarrollada con *HTML*, *CSS* y *JavaScript* que permite a los usuarios acceder a información sobre fisioterapia, incluyendo artículos, libros y recursos educativos. La web ofrece una interfaz intuitiva y responsiva, brindando una experiencia de usuario agradable y accesible desde cualquier dispositivo.",
-            badges: ["HTML", "CSS", "JavaScript"],
+            description: {
+                es: "*Fisio Libre* es un sitio web desarrollada con *HTML*, *CSS* y *JavaScript* que permite a los usuarios acceder a información sobre fisioterapia, incluyendo artículos, libros y recursos educativos. La web ofrece una interfaz intuitiva y responsiva, brindando una experiencia de usuario agradable y accesible desde cualquier dispositivo.",
+                en: "*Fisio Libre* is a website built with *HTML*, *CSS*, and *JavaScript* that provides access to physiotherapy information, including articles, books, and educational resources. Its intuitive, responsive interface offers an accessible experience on any device."
+            },
+            badges: {
+                es: ["HTML", "CSS", "JavaScript"],
+                en: ["HTML", "CSS", "JavaScript"]
+            },
             gallery: [
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto5/1.png",
+                    src: "assets/img/projects/proyecto5/1.webp",
                     alt: "home screen"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto5/2.png",
+                    src: "assets/img/projects/proyecto5/2.webp",
                     alt: "home screen"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto5/3.png",
+                    src: "assets/img/projects/proyecto5/3.webp",
                     alt: "home screen"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto5/4.png",
+                    src: "assets/img/projects/proyecto5/4.webp",
                     alt: "home screen"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto5/5.png",
+                    src: "assets/img/projects/proyecto5/5.webp",
                     alt: "contact screen"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto5/6.png",
+                    src: "assets/img/projects/proyecto5/6.webp",
                     alt: "help screen"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto5/7.png",
+                    src: "assets/img/projects/proyecto5/7.webp",
                     alt: "ley screen"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto5/8.png",
+                    src: "assets/img/projects/proyecto5/8.webp",
                     alt: "books screen"
                 },
                 {
                     type: "image",
-                    src: "assets/img/projects/proyecto5/9.png",
+                    src: "assets/img/projects/proyecto5/9.webp",
                     alt: "pdf screen"
                 }
             ]
@@ -735,6 +766,35 @@ function initProjectModal() {
     const closeButton = modal.querySelector(".project-modal__close");
     const previousButton = modal.querySelector(".project-modal__previous");
     const nextButton = modal.querySelector(".project-modal__next");
+
+    function localized(value) {
+        if (value && typeof value === "object" && !Array.isArray(value)) {
+            return value[document.documentElement.lang] || value.es;
+        }
+
+        return value;
+    }
+
+    function updateProjectText() {
+        title.textContent = localized(currentProject.title);
+        description.textContent = localized(currentProject.description);
+        badges.innerHTML = localized(currentProject.badges)
+            .map((badge) => `<span>${badge}</span>`)
+            .join("");
+
+        const websiteLink = links.querySelector("[data-project-website]");
+        if (websiteLink && currentProject.website) {
+            websiteLink.textContent = localized(currentProject.website.text);
+        }
+    }
+
+    window.addEventListener("languagechange", () => {
+        if (!currentProject) {
+            return;
+        }
+
+        updateProjectText();
+    });
 
     cards.forEach((card, index) => {
         card.addEventListener("click", (event) => {
@@ -759,13 +819,8 @@ function initProjectModal() {
 
         currentSlide = 0;
 
-        title.textContent = currentProject.title;
-        description.textContent = currentProject.description;
+        updateProjectText();
         terminalTitle.textContent = currentProject.file;
-
-        badges.innerHTML = currentProject.badges
-            .map((badge) => `<span>${badge}</span>`)
-            .join("");
 
         const sourceCard = cards[index];
         const projectLinks = sourceCard.querySelectorAll(
@@ -788,7 +843,8 @@ function initProjectModal() {
             const websiteLink = document.createElement("a");
 
             websiteLink.href = currentProject.website.url;
-            websiteLink.textContent = currentProject.website.text;
+            websiteLink.textContent = localized(currentProject.website.text);
+            websiteLink.dataset.projectWebsite = "true";
             websiteLink.target = "_blank";
             websiteLink.rel = "noopener noreferrer";
 
@@ -879,7 +935,7 @@ function initProjectModal() {
             const image = document.createElement("img");
 
             image.src = slide.src;
-            image.alt = slide.alt || currentProject.title;
+            image.alt = slide.alt || localized(currentProject.title);
             image.className = "project-modal__media";
 
             gallery.appendChild(image);
@@ -1005,13 +1061,15 @@ function createProjectModal() {
                 </div>
 
                 <span class="project-modal__terminal-title">
-                    proyecto.sh
+                    <span data-i18n="modal.terminalTitle">${window.t("modal.terminalTitle")}</span>
                 </span>
 
                 <button
                     class="project-modal__close"
                     type="button"
-                    aria-label="Cerrar proyecto"
+                    aria-label="${window.t("modal.close") }"
+                    data-i18n="modal.close"
+                    data-i18n-attr="aria-label"
                 >
                     ×
                 </button>
@@ -1024,7 +1082,9 @@ function createProjectModal() {
                     <button
                         class="project-modal__arrow project-modal__previous"
                         type="button"
-                        aria-label="Imagen anterior"
+                        aria-label="${window.t("modal.previous") }"
+                        data-i18n="modal.previous"
+                        data-i18n-attr="aria-label"
                     >
                         ‹
                     </button>
@@ -1034,7 +1094,9 @@ function createProjectModal() {
                     <button
                         class="project-modal__arrow project-modal__next"
                         type="button"
-                        aria-label="Imagen siguiente"
+                        aria-label="${window.t("modal.next") }"
+                        data-i18n="modal.next"
+                        data-i18n-attr="aria-label"
                     >
                         ›
                     </button>
