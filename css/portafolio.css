@@ -26,16 +26,6 @@ body.portfolio {
     pointer-events: none;
 }
 
-/* CAPA DE PARTÍCULAS */
-.portfolio__canvas {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none;
-}
-
 /* CONTENIDO SOBRE LAS PARTÍCULAS */
 .site-header,
 main,

@@ -934,6 +934,8 @@ function initProjectModal() {
         } else {
             const image = document.createElement("img");
 
+            image.loading = "eager";
+            image.decoding = "async";
             image.src = slide.src;
             image.alt = slide.alt || localized(currentProject.title);
             image.className = "project-modal__media";

@@ -2,8 +2,8 @@
 
 const CONFIG = {
     particles: {
-        desktop: 110,
-        mobile: 55,
+        desktop: 80,
+        mobile: 35,
         connectionDistance: 150,
         mouseDistance: 180,
         speed: 0.35,
